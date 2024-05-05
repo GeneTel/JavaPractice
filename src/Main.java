@@ -1,12 +1,34 @@
+import HW11.ArrayDataException;
+import HW11.ArraySizeException;
 import HW9.Task1;
 import HW9.Task2;
 
 import java.util.Arrays;
 
+import static HW11.ArrayValueCalculator.doCalc;
 import static HW9.Task3.twoSum;
 
 public class Main {
     public static void main(String[] args) {
+
+        String[][] array = {
+                {"1", "2", "3", "4"},
+                {"5", "6", "7", "8"},
+                {"9", "10", "11", "12"},
+                {"13", "14", "15", "16"}
+        };
+
+        try {
+            // 6. Виклик методу doCalc та обробка винятків
+            int result = doCalc(array);
+            System.out.println("Результат розрахунку: " + result);
+        } catch (ArraySizeException | ArrayDataException e) {
+            // 7. Обробка винятків та виведення повідомлення
+            System.out.println("Сталася помилка: " + e.getMessage());
+            e.printStackTrace();
+        }
+
+
         //Task 1
         String input1 = "A man, a plan, a canal: Panama";
         String input2 = "race a car";
@@ -50,5 +72,5 @@ public class Main {
         int[] result3 = twoSum(nums3, target3);
         System.out.println("Output 3: " + Arrays.toString(result3)); // Output: [0, 1]
     }
-}
 
+}
