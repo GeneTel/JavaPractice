@@ -28,7 +28,6 @@ public class Server {
                 if (containsRussianLetters(clientGreeting)) {
                     out.println("Що таке паляниця?");
 
-
                     String clientAnswer = in.readLine();
 
 
